@@ -1,0 +1,59 @@
+Ans:-
+     OOP, or Object-Oriented Programming, is a popular and widely used programming paradigm that focuses on organizing and modeling software as a collection of objects, which are instances of classes. OOP is designed to make software development more modular, maintainable, and scalable. Here are some of the core OOP concepts:
+
+Class: A class is a blueprint or template for creating objects. It defines the attributes (data members) and behaviors (methods) that objects of that class will have.
+
+Object: An object is an instance of a class. It represents a specific entity or concept and encapsulates its data and behavior.
+
+Encapsulation: Encapsulation is the concept of bundling the data (attributes) and methods (functions) that operate on the data into a single unit, i.e., the class. It restricts direct access to some of an object's components, promoting data integrity and preventing unauthorized access and modification.
+
+Inheritance: Inheritance allows a class (subclass or derived class) to inherit properties and behaviors from another class (superclass or base class). It promotes code reusability and the creation of hierarchies of related classes.
+
+Polymorphism: Polymorphism enables objects of different classes to be treated as objects of a common superclass. It allows different classes to provide their own implementations of methods with the same name, enabling flexibility and dynamic behavior.
+
+Abstraction: Abstraction is the process of simplifying complex reality by modeling classes based on the essential characteristics and behaviors while hiding unnecessary details. It allows developers to work with high-level concepts and reduce complexity.
+
+Method: A method is a function or procedure defined within a class. It encapsulates specific behavior related to the class and is called on objects of that class.
+
+Constructor: A constructor is a special method that gets called when an object is instantiated from a class. It is used to initialize the object's attributes and perform any necessary setup.
+
+Destructor: A destructor is a special method that is called when an object is destroyed or goes out of scope. It is used to release resources or perform cleanup operations.
+
+Polymorphism: Polymorphism allows different classes to be treated as instances of a common superclass. This allows for flexibility in method implementation and enables dynamic binding, where the appropriate method to be called is determined at runtime.
+
+Method Overloading: Method overloading is the ability to define multiple methods in the same class with the same name but different parameter lists. The method that gets called is determined by the number or types of arguments used when calling it.
+
+Method Overriding: Method overriding is the ability of a subclass to provide a specific implementation of a method that is already defined in its superclass. This allows for customizing the behavior of inherited methods.
+
+Answer (3):-
+            
+OOP (Object-Oriented Programming) and POP (Procedural-Oriented Programming) are two different programming paradigms, each with its own approach to structuring and organizing code. Here are the key differences between the two:
+
+Paradigm:
+
+OOP: Object-Oriented Programming is a programming paradigm that focuses on modeling software as a collection of objects, where objects are instances of classes, and these objects encapsulate both data (attributes) and behavior (methods).
+POP: Procedural-Oriented Programming is a programming paradigm that revolves around procedures or functions, where the program's logic is divided into a series of functions or procedures that operate on data.
+Unit of Organization:
+
+OOP: The primary unit of organization in OOP is the "object," which is an instance of a class. Classes define the structure and behavior of objects, and objects represent specific instances of those classes.
+POP: The primary unit of organization in POP is the "function" or "procedure." The program's structure is determined by the sequence of function calls, and data is typically shared through global variables or function arguments.
+Data and Behavior:
+
+OOP: OOP emphasizes the bundling of data and behavior within objects. Objects store data as attributes and encapsulate behavior in methods. This promotes encapsulation and data hiding.
+POP: POP separates data and behavior. Data is stored in global variables or passed between functions as parameters, and functions operate on this data. There is less emphasis on data encapsulation.
+Inheritance:
+
+OOP: OOP supports the concept of inheritance, where classes can inherit attributes and methods from other classes. This promotes code reuse and the creation of class hierarchies.
+POP: Inheritance is not a fundamental concept in POP. Code reuse is typically achieved by creating reusable functions or procedures, but there is no inherent mechanism for inheriting functionality.
+Polymorphism:
+
+OOP: OOP provides polymorphism, allowing different classes to provide their own implementations of methods with the same name, promoting flexibility and dynamic behavior.
+POP: Polymorphism is less emphasized in POP, as it is not a core concept. Function names usually need to be unique, and the behavior is determined at compile-time.
+Abstraction:
+
+OOP: OOP emphasizes abstraction, which means modeling real-world entities as objects and abstracting away unnecessary details, allowing developers to work with high-level concepts.
+POP: Abstraction in POP is primarily related to procedural decomposition, breaking down a problem into a series of procedures and functions.
+Examples:
+
+OOP languages include Java, C++, Python, and C#.
+POP languages include C, Pascal, and early versions of Fortran
