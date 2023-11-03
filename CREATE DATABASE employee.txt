@@ -1,0 +1,162 @@
+assignment sql
+
+1. What do you understand By Database?
+ans:-
+     A database is a structured collection of data that is organized and stored in a way that allows easy access, management, and retrieval. Databases can store various types of data such as text, numbers, images, and more. They are used in applications ranging from simple websites to complex business systems.
+
+2. What is Normalization?
+ans:- 
+     Normalization is the process of organizing a database to reduce redundancy and improve data integrity. It involves dividing large tables into smaller, related tables and defining relationships between them. This process minimizes redundancy and dependency by organizing fields and table of a database.
+
+3. What is the Difference between DBMS and RDBMS?
+ans:- 
+    DBMS (Database Management System): It is a software suite that allows users to interact with the database. It provides an interface to interact with the database, but it may not support relationships between tables.
+
+RDBMS (Relational Database Management System): RDBMS is a type of DBMS that organizes data into structured tables with rows and columns. It supports relationships between tables, ensuring data integrity through foreign keys and normalization techniques.
+
+4. What is MF Cod Rule of RDBMS Systems?
+ans:- 
+     I am not familiar with the term "MF Cod Rule" in the context of RDBMS systems. It might be a specific concept or rule introduced after my last training data in January 2022.
+
+5. What do you understand By Data Redundancy?
+ans:-
+     Data redundancy occurs when the same piece of data is stored in multiple places within a database. It can lead to inconsistencies and wastage of storage space.
+
+6. What is DDL Interpreter?
+ans:-
+     DDL (Data Definition Language) Interpreter is a component of a database management system that interprets and executes DDL statements. DDL statements are used to define, modify, and remove database structures (e.g., CREATE TABLE, ALTER TABLE, DROP TABLE).
+
+7. What is DML Compiler in SQL?
+ans:-
+     DML (Data Manipulation Language) Compiler processes DML statements in a database system. DML statements (e.g., SELECT, INSERT, UPDATE, DELETE) are used to manage and manipulate data stored in the database.
+
+8. What is SQL Key Constraints and an Example of SQL Key Constraints?
+ans:- 
+     SQL key constraints are rules that enforce the uniqueness and integrity of data in a table. There are several types of key constraints:
+
+Primary Key: Ensures uniqueness of each record in a table. Example: CREATE TABLE Employees (ID INT PRIMARY KEY, Name VARCHAR(255));
+Unique Key: Ensures the uniqueness of data in a column or a set of columns. Example: CREATE TABLE Users (Email VARCHAR(255) UNIQUE, Password VARCHAR(255));
+Foreign Key: Establishes a link between data in two tables, ensuring referential integrity. Example: CREATE TABLE Orders (OrderID INT PRIMARY KEY, CustomerID INT, FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID));
+
+
+9. What is a Save Point? How to create a Save Point with a Query?
+ans:- 
+     A save point in a database is a point to which you can roll back a transaction if necessary. To create a save point in SQL, you can use the following query:
+
+sql
+Copy code
+SAVEPOINT save_point_name;
+10. What is a Trigger and how to create a Trigger in SQL?
+A trigger in SQL is a set of instructions that are automatically executed ("triggered") in response to certain events on a particular table or view in a database. Triggers are used to maintain referential integrity, enforce business rules, and automate actions.
+
+Here's an example of creating a trigger in SQL:
+
+sql
+Copy code
+CREATE TRIGGER trigger_name
+AFTER INSERT ON table_name
+FOR EACH ROW
+BEGIN
+    -- Trigger logic goes here
+    -- You can access the new row using NEW.column_name
+END;
+In this example, the trigger will be activated after an INSERT operation on the specified table_name. The logic inside the BEGIN and END block will be executed whenever the trigger is activated.
+
+
+CREATE DATABASE employee
+
+CREATE TABLE employee 
+(
+    employee_id int,
+    salary int,
+    joing_date int,
+    firstname varchar(40),
+    lastname varchar(40),
+    department varchar(40)
+    
+)
+    
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(1,"harsh","khandelwal","500000","10/12/2023","full stack");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(2,"jayesh","ojha","500000","10/12/2023","full stack");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(3,"abhishek","gaud","500000","10/12/2023","full stack");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(4,"om","jain","500000","10/12/2023","fulter");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(5,"yashdeep","triwadi","500000","10/12/2023","full stack");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(6,"misba","khan","500000","10/12/2023","full stack");
+
+
+CREATE DATABASE incetive
+
+CREATE TABLE incetive
+(
+    employee_ref_id int,
+    incetive_date varchar(40),
+    incetive_amount int 
+    
+)
+
+INSERT INTO incetive(employee_ref_id,incetive_date,incetive_amount) VALUES(1,"10/12/2023","50000");
+INSERT INTO incetive(employee_ref_id,incetive_date,incetive_amount) VALUES(2,"11/12/2023","50000");
+INSERT INTO incetive(employee_ref_id,incetive_date,incetive_amount) VALUES(3,"10/11/2023","50000");
+INSERT INTO incetive(employee_ref_id,incetive_date,incetive_amount) VALUES(4,"13/12/2023","50000");
+
+a) SELECT  * FROM employee WHERE firstname
+b) SELECT * firstname,joing_date,salary FROM employee
+
+
+CREATE TABLE anime
+(
+  firstname varchar(40),
+  lastname varchar(40),
+  address varchar(40),
+   city varchar(40),
+    age int
+    )
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("mickey","mouse","123 fantacy way","anaheim",73);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("bat","man","321 caveran ave","gotham",54);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("wonder","women","987 truth way","paradise",39);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("donald","duck","555 quak street","mallard",65);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("bugs","bunny","567 carreot street","rascal",58);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("wiely","coyote","999 acme way","canyon",61);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("cat","woman","234 purffect street","hairball",32);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("tweety","bird","543","itoltow",28);
+
+
+
+assignment sql
+
+create database assignment
+
+CREATE TABLE salseperson
+(
+    sal_no int PRIMARY KEY,
+    sal_name varchar(99),
+    sal_city varchar(99),
+    sal_comm int 
+)
+
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1001,"peel","london",.12);
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1002,"serres","san jose",.13);
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1004,"motika","london",.11);
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1007,"rafkin","barcelona",.15);
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1003,"axelrod","new york",.1);
+
+
+
+create table customer
+(
+cnm int,
+cname varchar(99),
+city varchar(99),
+rating varchar(99),
+
+sal_no_fk int,
+
+forign key (sal_no_fk) refrence salseperson(sal_no)
+)
+
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(201,"hoffman","london",100,1001);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(202,"giovanne","roe",200,1003);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(203,"liu","san jose",300,1002);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(204,"grass","barcelona",100,1002);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(206,"clemens","london",300,1007);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(207,"pereira","roe",100,1004);
