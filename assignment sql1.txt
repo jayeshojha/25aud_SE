@@ -1,0 +1,189 @@
+assignment sql
+
+1. What do you understand By Database?
+ans:-
+      a database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS).
+
+    
+2. What is Normalization?
+ans:- 
+    Normalization is the process of organizing the data in the database.
+    Normalization is used to minimize the redundancy from a relation or set of relations. It is also used to eliminate undesirable characteristics like      Insertion, Update, and Deletion Anomalies.Normalization divides the larger table into smaller and links them using relationships.
+The normal form is used to reduce redundancy from the database table.
+
+3. What is the Difference between DBMS and RDBMS?
+ans:- 
+       DBMS	                                                   RDBMS
+1.DBMS stores data as file.	                                 1 RDBMS stores data in tabular form.
+2.Data elements need to access individually.	                 2 Multiple data elements can be accessed at the same time.
+3.No relationship between data.	                                 3 Data is stored in the form of tables which are related to each other.
+4.Normalization is not present.	                                 4 Normalization is present.
+5.DBMS does not support distributed database.	                 5 RDBMS supports distributed database.
+6.It stores data in either a navigational or hierarchical form.  6 It uses a tabular structure where the headers are the column names, and the rows contain                         
+                                                                 corresponding values.
+
+4. What is MF Cod Rule of RDBMS Systems?
+ans:-
+    Rule 1 − Rule of Information
+
+Relational Databases should store the data in the form of relations. Tables are relations in Relational Database Management Systems. Be it any user defined    data or meta-data, it is important to store the value as an entity in the table cells.
+
+Rule 2 − Rule of Guaranteed Access
+
+The use of pointers to access data logically is strictly forbidden. Every data entity which is atomic in nature should be accessed logically by using a right combination of the name of table, primary key represented by a specific row value and column name represented by attribute value.
+
+Rule 3 − Rule of Systematic Null Value Support
+
+Null values are completely supported in relational databases. They should be uniformly considered as ‘missing information’. Null values are independent of any data type. They should not be mistaken for blanks or zeroes or empty strings. Null values can also be interpreted as ‘inapplicable data’ or ‘unknown information.’
+ 
+     
+
+5. What do you understand By Data Redundancy?
+ans:-
+      Data redundancy in database means that some data fields are repeated in the database.
+
+6. What is DDL Interpreter?
+ans:-
+      Data Definition Language is what DDL stands for. As implied by the name, the DDL Interpreter interprets DDL statements like those used in schema definitions (such as create, remove, etc.). This interpretation yields a set of tables that include the meta-data (data of data) that is kept in the data dictionary. Metadata may be stored in a data dictionary. In essence, it is a part of the disc storage that will be covered in a later section of this article.
+
+7. What is DML Compiler in SQL?
+ans:-
+       Compiler for DML Data Manipulation Language is what DML stands for. In keeping with its name, the DML Compiler converts DML statements like select, update, and delete into low-level instructions or simply machine-readable object code, to enable execution.
+
+8. What is SQL Key Constraints and an Example of SQL Key Constraints?
+ans:- 
+     SQL key constraints are rules that enforce the uniqueness and integrity of data in a table. There are several types of key constraints:
+
+Primary Key: Ensures uniqueness of each record in a table. Example: CREATE TABLE Employees (ID INT PRIMARY KEY, Name VARCHAR(255));
+Unique Key: Ensures the uniqueness of data in a column or a set of columns. Example: CREATE TABLE Users (Email VARCHAR(255) UNIQUE, Password VARCHAR(255));
+Foreign Key: Establishes a link between data in two tables, ensuring referential integrity. Example: CREATE TABLE Orders (OrderID INT PRIMARY KEY, CustomerID INT, FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID));
+
+
+9. What is a Save Point? How to create a Save Point with a Query?
+ans:- 
+   Savepoint is a command in SQL that is used with the rollback command.
+   It is a command in Transaction Control Language that is used to mark the transaction in a table.
+   Consider you are making a very long table, and you want to roll back only to a certain position in a table then; this can be achieved using the savepoint.
+If you made a transaction in a table, you could mark the transaction as a certain name, and later on, if you want to roll back to that point, you can do it easily by using the transaction's name.
+Savepoint is helpful when we want to roll back only a small part of a table and not the whole table. In simple words, we can say savepoint is a bookmark in SQL.
+
+sql
+Copy code
+SAVEPOINT save_point_name;
+10. What is a Trigger and how to create a Trigger in SQL?
+ans:-
+    A trigger is a set of SQL statements that reside in system memory with unique names. It is a specialized category of stored procedure that is called automatically when a database server event occurs. Each trigger is always associated with a table.
+
+
+
+Here's an example of creating a trigger in SQL:
+
+sql
+Copy code
+CREATE TRIGGER trigger_name
+AFTER INSERT ON table_name
+FOR EACH ROW
+BEGIN
+    -- Trigger logic goes here
+    -- You can access the new row using NEW.column_name
+END;
+In this example, the trigger will be activated after an INSERT operation on the specified table_name. The logic inside the BEGIN and END block will be executed whenever the trigger is activated.
+
+
+CREATE DATABASE employee
+
+CREATE TABLE employee 
+(
+    employee_id int,
+    salary int,
+    joing_date int,
+    firstname varchar(40),
+    lastname varchar(40),
+    department varchar(40)
+    
+)
+    
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(1,"harsh","khandelwal","500000","10/12/2023","full stack");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(2,"jayesh","ojha","500000","10/12/2023","full stack");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(3,"abhishek","gaud","500000","10/12/2023","full stack");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(4,"om","jain","500000","10/12/2023","fulter");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(5,"yashdeep","triwadi","500000","10/12/2023","full stack");
+INSERT INTO employee(employee_id,firstname,lastname,salary,joing_date,department) VALUES(6,"misba","khan","500000","10/12/2023","full stack");
+
+
+CREATE DATABASE incetive
+
+CREATE TABLE incetive
+(
+    employee_ref_id int,
+    incetive_date varchar(40),
+    incetive_amount int 
+    
+)
+
+INSERT INTO incetive(employee_ref_id,incetive_date,incetive_amount) VALUES(1,"10/12/2023","50000");
+INSERT INTO incetive(employee_ref_id,incetive_date,incetive_amount) VALUES(2,"11/12/2023","50000");
+INSERT INTO incetive(employee_ref_id,incetive_date,incetive_amount) VALUES(3,"10/11/2023","50000");
+INSERT INTO incetive(employee_ref_id,incetive_date,incetive_amount) VALUES(4,"13/12/2023","50000");
+
+a) SELECT  * FROM employee WHERE firstname
+b) SELECT * firstname,joing_date,salary FROM employee
+
+
+CREATE TABLE anime
+(
+  firstname varchar(40),
+  lastname varchar(40),
+  address varchar(40),
+   city varchar(40),
+    age int
+    )
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("mickey","mouse","123 fantacy way","anaheim",73);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("bat","man","321 caveran ave","gotham",54);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("wonder","women","987 truth way","paradise",39);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("donald","duck","555 quak street","mallard",65);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("bugs","bunny","567 carreot street","rascal",58);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("wiely","coyote","999 acme way","canyon",61);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("cat","woman","234 purffect street","hairball",32);
+INSERT INTO anime(firstname,lastname,address,city,age)VALUES("tweety","bird","543","itoltow",28);
+
+
+
+assignment sql
+
+create database assignment
+
+CREATE TABLE salseperson
+(
+    sal_no int PRIMARY KEY,
+    sal_name varchar(99),
+    sal_city varchar(99),
+    sal_comm int 
+)
+
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1001,"peel","london",.12);
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1002,"serres","san jose",.13);
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1004,"motika","london",.11);
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1007,"rafkin","barcelona",.15);
+INSERT INTO salseperson(sal_no,sal_name,sal_city,sal_comm) VALUES(1003,"axelrod","new york",.1);
+
+
+n
+create table customer
+(
+cnm int,
+cname varchar(99),
+city varchar(99),
+rating varchar(99),
+
+sal_no_fk int,
+
+forign key (sal_no_fk) refrence salseperson(sal_no)
+)
+
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(201,"hoffman","london",100,1001);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(202,"giovanne","roe",200,1003);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(203,"liu","san jose",300,1002);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(204,"grass","barcelona",100,1002);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(206,"clemens","london",300,1007);
+INSERT INTO customer(c_nm,c_name,c_city,c_rating,sal_no_fk) VALUES(207,"pereira","roe",100,1004);
