@@ -1,0 +1,105 @@
+Assesment database  
+
+Create database assesment
+
+CREATE TABLE city
+(
+   id int,
+   city_name varchar(40),
+   lat double,
+   lng double,
+   country_id int 
+    )
+
+INSERT INTO country(id,city_name,lat,lng,country_id) VALUES(1,"Berlin",52.520008,13.404954,1);
+INSERT INTO country(id,city_name,lat,lng,country_id) VALUES(2,"Belgrade",44.787197,20.457273,2);
+INSERT INTO country(id,city_name,lat,lng,country_id) VALUES(3,"Zagreb",45.815399,15.966568,3);
+INSERT INTO country(id,city_name,lat,lng,country_id) VALUES(4,"New York",40.730610,-73.935242,4);
+INSERT INTO country(id,city_name,lat,lng,country_id) VALUES(5,"Los Angeles",34.052235,-118.243683,4);
+INSERT INTO country(id,city_name,lat,lng,country_id) VALUES(6,"Warsaw",52.237049,017532,5);
+
+
+
+Create table country
+
+CREATE TABLE country (
+    id INT PRIMARY KEY,
+    country_name VARCHAR(255),
+    country_name_eng VARCHAR(255),
+    country_code VARCHAR(3)
+);
+
+Insert data into Country Table
+
+INSERT INTO country (id, country_name, country_name_eng, country_code)
+VALUES
+    (1, 'Deutschland', 'Germany', 'DEU'),
+    (2, 'Srbija', 'Serbia', 'SRB'),
+    (3, 'Hrvatska', 'Croatia', 'HRV'),
+    (4, 'United States of America', 'United States of America', 'USA'),
+    (5, 'Polska', 'Poland', 'POL'),
+    (6, 'Espana', 'Spain', 'ESP'),
+    (7, 'Rossiya', 'Russia', 'RUS');
+
+
+create table customer 
+ 
+CREATE TABLE customer (
+    id INT PRIMARY KEY,
+    customer_name VARCHAR(255),
+    city_id INT,
+    customer_address VARCHAR(255),
+    next_cal_date DATE,
+    ts_inserted TIMESTAMP,
+    FOREIGN KEY (city_id) REFERENCES city(id)
+);
+
+Insert data into Customer Table
+
+INSERT INTO customer (id, customer_name, city_id, customer_address, next_cal_date, ts_inserted)
+VALUES
+    (1, 'Jewelry Store', 4, '4 Long Street', '2020-01-20', '2020-01-09 14:01:20'),
+    (2, 'Bakery', 2, 'Kurfurstendamm 25', '2020-02-21', '2020-01-09 17:52:15'),
+    (3, 'Café', 1, 'Tauentzienstrake 44', '2020-01-21', '2020-01-10 08:02:49'),
+    (4, 'Restaurant', 3, 'Ulica lipa 15', '2020-01-21', '2020-01-10 09:20:21');
+
+
+
+Task : 1 (join multiple tables using left join)
+
+SELECT 
+    co.id AS country_id,
+    co.country_name_eng AS country_name,
+    ci.city_name,
+    cu.customer_name
+FROM 
+    country co
+LEFT JOIN 
+    city ci ON co.id = ci.country_id
+LEFT JOIN 
+    customer cu ON ci.id = cu.city_id;
+
+
+
+Task : 2 (join multiple tables using both left and inner join)
+
+SELECT 
+    co.id AS country_id,
+    co.country_name_eng AS country_name,
+    ci.city_name,
+    cu.customer_name
+FROM 
+    country co
+LEFT JOIN 
+    city ci ON co.id = ci.country_id
+LEFT JOIN 
+    customer cu ON ci.id = cu.city_id
+WHERE 
+    ci.id IS NOT NULL
+    AND cu.id IS NOT NULL;
+
+
+
+
+
+                   
